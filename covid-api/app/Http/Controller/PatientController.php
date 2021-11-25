@@ -56,9 +56,6 @@ class PatientController extends Controller
     {
         $patients = Patient::find($id);
 
-        # Jika data ada, maka kembalikan data tersebut
-        # Jika tidak ada, maka kembalikan pesan tidak ada
-
         if ($patients) {
             $data = [
                 'message' => 'Get Detail Resource',
@@ -79,9 +76,6 @@ class PatientController extends Controller
     function update(Request $request, $id)
     {
         $patients = Patient::find($id);
-
-        # Jika data ada, maka data di update
-        # Jika data tidak berhasil, maka kembalikan pesan tidak ada
 
         if ($patients) {
             $patients->update($request->all());
@@ -106,9 +100,6 @@ class PatientController extends Controller
     function destroy($id)
     {
         $patients = Patient::find($id);
-
-        # Cari id patient
-        # Jika ketemu, maka hapus datanya
 
         if ($patients) {
             $patients->delete();
